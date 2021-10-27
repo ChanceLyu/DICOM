@@ -1,6 +1,6 @@
 import os
 import pydicom
-import openpyxl
+
 
 
 # tag可能不存在，视具体DICOM文件而定
@@ -44,3 +44,7 @@ def rename_dicom(file_path):
             continue
 
     print('Rename End!')
+
+
+file_path = input('path')
+rename_dicom(file_path)
