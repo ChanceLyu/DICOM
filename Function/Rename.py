@@ -2,7 +2,6 @@ import os
 import pydicom
 
 
-
 # tag可能不存在，视具体DICOM文件而定
 
 # 此函数只能根据PatientID更改DICOM文件名

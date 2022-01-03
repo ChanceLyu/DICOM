@@ -7,7 +7,6 @@ import cv2
 from tqdm import tqdm
 
 
-
 def convert_DICOM(img, low_window, high_window, save_path):
     # 将重要数据储存到lungwin中
     lungwin = np.array([low_window * 1., high_window * 1.])
@@ -17,6 +16,7 @@ def convert_DICOM(img, low_window, high_window, save_path):
     newimg = (newimg * 255).astype('uint8')
     stacked_img = np.stack((newimg,) * 3, axis=-1)
     cv2.imwrite(save_path, stacked_img, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
+
 
 if __name__ == '__main__':
 
