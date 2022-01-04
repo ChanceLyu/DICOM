@@ -7,6 +7,7 @@ import cv2
 from tqdm import tqdm
 
 
+# 此函数旨在将一个文件夹内的所有DICOM文件转换为JPG文件，并集中生成在某一制定文件夹内
 def convert_DICOM(img, low_window, high_window, save_path):
     # 将重要数据储存到lungwin中
     lungwin = np.array([low_window * 1., high_window * 1.])
