@@ -31,14 +31,27 @@ if __name__ == '__main__':
     os.makedirs(path)
 
     for i in tqdm(os.listdir(dicom_dir)):
+
+        if os.path.exists(dicom_dir + '/.DS_Store'):
+            os.remove(dicom_dir + '/.DS_Store')
+
+
         # 读取dicom文件
         dcm_image_path = os.path.join(dicom_dir, i)
         # 分离文件名与扩展名
         name, _ = os.path.splitext(i)
         # 设定jpg文件路径
-        jpg_path = os.path.join(path, name + '.png')
+        # 可直接更改生成图像的扩展名
+        jpg_path = os.path.join(path, name + '.jpg')
         # 读取dicom文件的相关信息
+
+        if os.path.exists(dicom_dir + '/.DS_Store'):
+            os.remove(dicom_dir + '/.DS_Store')
+
         ds_array = SimpleITK.ReadImage(dcm_image_path)
+
+
+
         # 获取array
         img_array = SimpleITK.GetArrayFromImage(ds_array)
         # 获取单张shape，类似（1，height，width）
@@ -50,3 +63,5 @@ if __name__ == '__main__':
         low = np.min(img_array)
 
         convert_DICOM(img_array, low, high, jpg_path)
+
+    print('Convert End!')
