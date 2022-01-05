@@ -15,7 +15,7 @@ for i in JPG_list:  # 截取左半边
 
     box = (0, 0, width * 0.5, height)
     img = img.crop(box)
-    img.save(JPG_file + ' 2/' + i.strip('.jpg') + '.jpg')
+    img.save(JPG_file + '/' + i.strip('.jpg') + '.jpg')
     # 根据生成文件扩展名和目录进行修改
 
 for i in JPG_list:  # 截取右半边
@@ -26,5 +26,5 @@ for i in JPG_list:  # 截取右半边
 
     box = (width * 0.5, 0, width, height)
     img = img.crop(box)
-    img.save(JPG_file + ' 3/' + i.strip('.jpg') + '.jpg')
+    img.save(JPG_file + ' 1/' + i.strip('.jpg') + '.jpg')
     # 根据生成文件扩展名和目录进行修改
