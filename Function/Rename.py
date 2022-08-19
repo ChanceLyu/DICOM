@@ -24,7 +24,7 @@ def rename_dicom(file_path):
             # 读取PatientID
             tag = dicom_file.PatientID
             # 通过os.renames修改DICOM文件的名称
-            # 萌新需要注意前后名称均包含文件路径，并且勿忘文件扩展名
+            # 需要注意前后名称均包含文件路径，并且勿忘文件扩展名
             old_name = file_path + '/' + file
             middle_name = file_path + '/hello.dcm'
             new_name = file_path + '/' + tag + '.dcm'

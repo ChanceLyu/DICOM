@@ -47,3 +47,4 @@ def export_dicom(path_dicom, path_excel, s):
 
     dicom_workbook.save(path_excel)
     print('Export End!')
+
